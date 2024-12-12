@@ -38,7 +38,7 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-### Creating REST API with NESTJS , TypeORM and Postgres
+### Securing NESTJS REST API using passportjs JWT Auth
 
  - Auther - Burhan Saadi
  - Youtube Link: 
