@@ -1,0 +1,104 @@
+[
+  {
+    
+    "productName": "Keyboard",
+    "productvendor": "Logitech",
+    "productDescription": "Mechanical keyboard",
+    "quantityInStock": 100,
+    "buyPrice": 70,
+    "msrp": 129.99
+  },
+  {
+    
+    "productName": "Mouse",
+    "productvendor": "Razer",
+    "productDescription": "Wireless Mouse",
+    "quantityInStock": 50,
+    "buyPrice": 40,
+    "msrp": 79.99
+  },
+  {
+    
+    "productName": "Monitor",
+    "productvendor": "Samsung",
+    "productDescription": "Curved Gaming Monitor",
+    "quantityInStock": 20,
+    "buyPrice": 250,
+    "msrp": 399.99
+  }
+]
+-------------------------------------------------------------------------
+
+[
+  {
+    "customerName": "John Doe",
+    "cemail": "john.doe@example.com",
+    "phone": "+15551234567",
+    "address": "123 Main Street",
+    "city": "Anytown",
+    "postalCode": "12345",
+    "country": "USA"
+  },
+  {
+    "customerName": "Jane Smith",
+    "cemail": "jane.smith@example.com",
+    "phone": "+447700900123",
+    "address": "456 Oak Avenue",
+    "city": "Springfield",
+    "postalCode": "SP1 2AB",
+    "country": "UK"
+  },
+  {
+    "customerName": "Alice Johnson",
+    "cemail": "alice.johnson@example.com",
+    "phone": "+61401234567",
+    "address": "789 Pine Lane",
+    "city": "Sydney",
+    "postalCode": "2000",
+    "country": "Australia"
+  }
+]
+---------------------------------------------------------------------
+
+[
+  {
+    "orderDate": "2024-03-08T12:00:00.000Z",
+    "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "shippingDate": "2024-03-10T12:00:00.000Z",
+    "status": "Pending",
+    "comments": "Fragile, handle with care.",
+    "total": 150.50,
+    "paid": false,
+    "orderItems": [
+      {
+        "orderItemId": "123e4567-e89b-12d3-a456-426614174000",
+        "productId": "789c4567-e89b-12d3-a456-426614174001",
+        "productName": "Product A",
+        "quantity": 2
+      },
+      {
+        "orderItemId": "890d4567-e89b-12d3-a456-426614174002",
+        "productId": "456f4567-e89b-12d3-a456-426614174003",
+        "productName": "Product B",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "orderDate": "2024-03-09T12:00:00.000Z",
+    "customerId": "2b784567-e89b-12d3-a456-426614174004",
+    "shippingDate": "2024-03-12T12:00:00.000Z",
+    "status": "Shipped",
+    "comments": "",
+    "total": 50.00,
+    "paid": true,
+    "orderItems": [
+      {
+        "orderItemId": "901a4567-e89b-12d3-a456-426614174005",
+        "productId": "567g4567-e89b-12d3-a456-426614174006",
+        "productName": "Product C",
+        "quantity": 1
+      }
+    ]
+  }
+]

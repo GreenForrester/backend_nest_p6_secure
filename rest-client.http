@@ -1,0 +1,151 @@
+GET http://localhost:3000/v1/api/
+
+### 1. GET ALL THE CUSTOMERS
+GET http://localhost:3000/v1/api/customers/
+Authorization: Bearer eyJhbGciOcCI6IkpXVGhhLmJldGFAZXhhbXBsZS5jb20iLCJzdWIiOiI3Mzc0ODY4My1iODEyLTQ2YTgtYjFkMy0xNGFhMTNhYjI2ODciLCJpYXQiOjE3MzM4ODk1NjIsImV4cCI6MTczMzg4OTg2Mn0.bIewW7EBcWnejoD53NkrAhvNiMXLCTJWyqGM-EeyA2g
+
+### 2. GET CUSTOMER BY ID
+GET http://localhost:3000/v1/api/customers/e0b0af25-0346-4f84-b388-a871e45ae16a
+
+### 3. CREATE A NEW CUSTOMER
+POST http://localhost:3000/v1/api/customers/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFscGhhLmJldGFAZXhhbXBsZS5jb20iLCJzdWIiOiI3Mzc0ODY4My1iODEyLTQ2YTgtYjFkMy0xNGFhMTNhYjI2ODciLCJpYXQiOjE3MzM4ODk1NjIsImV4cCI6MTczMzg4OTg2Mn0.bIewW7EBcWnejoD53NkrAhvNiMXLCTJWyqGM-EeyA2g
+
+{
+    "customerName": "Alpha Brasvo",
+    "cemail": "Alpha.Brasvo@example.com",
+    "phone": "+15555553333",
+    "address": "123 Main St",
+    "city": "Anytown",
+    "postalCode": "12345",
+    "country": "USA"
+  }
+
+
+### 4. UPDATE CUSTOMER REQUEST
+PATCH  http://localhost:3000/v1/api/customers/aba73b51-b482-4cb1-8257-448b48356355
+Content-Type: application/json
+
+{
+    "address": "ABC Street",
+    "city": "xyz town"
+}
+
+### 5. DELETE CUSTOMER REQUEST
+DELETE http://localhost:3000/v1/api/customers/e0b0af25-0346-4f84-b388-a871e45ae16a
+
+###----------------------------------------------------------------------------------------------
+
+### 1. GET ALL THE PRODUCTS
+GET http://localhost:3000/v1/api/products/
+
+### 2. GET PRODUCTS BY ID
+GET http://localhost:3000/v1/api/products/3b53eee7-4c2d-4388-a350-b1a12f0939db
+
+### 3. CREATE A NEW PRODUCTS
+POST http://localhost:3000/v1/api/products/
+Content-Type: application/json
+
+{
+    
+    "productName": "Mouse",
+    "productvendor": "Logitech",
+    "productDescription": "Optical Mouse",
+    "quantityInStock": 50,
+    "buyPrice": 30,
+    "msrp": 35.99
+}
+
+### 4. DELETE PRODUCTS REQUEST
+DELETE http://localhost:3000/v1/api/products/7aef9b8b-106d-44ea-9960-caf5e4f75e90
+
+
+### 5. UPDATE PRODUCTS REQUEST
+PATCH  http://localhost:3000/v1/api/products/aba73b51-b482-4cb1-8257-448b48356355
+Content-Type: application/json
+
+{
+    "quantityInStock": 99,
+    "buyPrice": 71,
+    "msrp": 129.99
+}
+
+###-------------------------------------------------------------------------
+
+### 1. GET ALL THE ORDERS
+GET http://localhost:3000/v1/api/orders/
+
+### 2. GET ORDERS BY ID
+GET http://localhost:3000/v1/api/orders/aba73b51-b482-4cb1-8257-448b48356355
+
+ ### 4. DELETE Orders REQUEST
+DELETE  http://localhost:3000/v1/api/orders/7aef9b8b-106d-44ea-9960-caf5e4f75e90
+
+### 3. CREATE A NEW ORDER
+POST http://localhost:3000/v1/api/orders/
+Content-Type: application/json
+
+{
+    "orderDate": "2024-03-08T12:00:00.000Z",
+    "customerId": "aba73b51-b482-4cb1-8257-448b48356355",
+    "shippingDate": "2024-03-10T12:00:00.000Z",
+    "status": "Pending",
+    "comments": "Another order.",
+    "total": 150.50,
+    "paid": false,
+    "orderItems": [
+      {
+        "productId": "ea6b5a77-a23e-4225-8543-46f9153b36f4",
+        "productName": "Keyboard",
+        "quantity": 1
+      },
+      {
+        "productId": "a3fc60ce-3168-4812-8218-8ebdf22e27cf",
+        "productName": "Keyboard - type2",
+        "quantity": 1
+      }
+    ]
+  }
+
+### 5. UPDATE ORDERS REQUEST
+PATCH  http://localhost:3000/v1/api/orders/fa72fa5b-3401-4410-9d35-be25fc935e79
+Content-Type: application/json
+
+{
+
+  "status": "shipped",
+  "comments": "Very Fragile, handle with care.",
+
+  "orderItems": [
+    {
+      "productId": "ea6b5a77-a23e-4225-8543-46f9153b36f4",
+      "productName": "Product B",
+      "quantity": 1
+    }
+  ]
+}
+
+###Create users
+POST http://localhost:3000/v1/api/users
+Content-Type: application/json
+
+{
+  "fullname": "alpha beta",
+  "username": "alpha.beta@example.com",
+  "password": "securePassword"
+}
+
+###Get users
+GET http://localhost:3000/v1/api/users/
+Content-Type: application/json
+
+###Login
+
+POST http://localhost:3000/v1/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "alpha.beta@example.com",
+  "password": "securePassword"
+}
