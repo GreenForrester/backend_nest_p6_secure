@@ -1,9 +1,19 @@
 
-#for testing in no container environment
 services:
+  backendapi:
+    image: exnodebackapi6_1
+    container_name: exnodebackapi_6_1
+    hostname: exnodebackapi_6_1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    networks:
+      - my-network
+
   postgres:
     image: postgres:latest
-    container_name: postgres
+    container_name: postgres #use container name instead of localhost if there is container to container communication
     environment:
       POSTGRES_USER: testuser
       POSTGRES_PASSWORD: testpassword
@@ -12,7 +22,12 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
+    networks:
+      - my-network   
 
 volumes:
   postgres_data:
+
+networks:
+  my-network:
+    driver: bridge

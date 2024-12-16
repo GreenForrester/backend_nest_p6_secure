@@ -19,7 +19,7 @@ import { Auth } from './auth/entities/auth.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost', //use postgres for docker compose and localhost otherwise
+      host: 'postgres', //use postgres for docker compose and localhost otherwise
       port: 5432,
       username: 'testuser',
       password: 'testpassword',
