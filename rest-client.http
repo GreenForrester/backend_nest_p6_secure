@@ -131,8 +131,8 @@ POST http://localhost:3000/v1/api/users
 Content-Type: application/json
 
 {
-  "fullname": "alpha beta",
-  "username": "alpha.beta@example.com",
+  "fullname": "hgama beta",
+  "username": "alphhgamaa.beta@example.com",
   "password": "securePassword"
 }
 

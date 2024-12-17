@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Options,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -6,6 +14,18 @@ import { UpdateUserDto } from './dto/update-user.dto';
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
+
+  //If we like to be specific for a particular case
+  //@Options({
+  //  origin: 'http://localhost:5173', // Override the global settings if needed
+  //  methods: ['POST'],              // Restrict to just POST for this endpoint
+  //  allowedHeaders: ['Content-Type', 'Authorization'] // Additional headers
+  //})
+
+  @Options() // Handle OPTIONS requests for CORS preflight. nestjs mostly handles what to return
+  handleOptions() {
+    return {}; // Just return an empty object - NestJS will add the necessary headers
+  }
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
