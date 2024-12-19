@@ -49,9 +49,9 @@ Content-Type: application/json
 
 {
     
-    "productName": "Mouse",
-    "productvendor": "Logitech",
-    "productDescription": "Optical Mouse",
+    "productName": "Mouse1",
+    "productvendor": "Logitech1",
+    "productDescription": "Optical Mouse1",
     "quantityInStock": 50,
     "buyPrice": 30,
     "msrp": 35.99
@@ -131,8 +131,8 @@ POST http://localhost:3000/v1/api/users
 Content-Type: application/json
 
 {
-  "fullname": "hgama beta",
-  "username": "alphhgamaa.beta@example.com",
+  "fullname": "cool fool",
+  "username": "cool.fool@example.com",
   "password": "securePassword"
 }
 
@@ -146,6 +146,11 @@ POST http://localhost:3000/v1/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "alpha.beta@example.com",
+  "username": "cool.fool@example.com",
   "password": "securePassword"
 }
+
+###Get Count
+
+GET http://localhost:3000/v1/api/auth/counts
+Content-Type: application/json

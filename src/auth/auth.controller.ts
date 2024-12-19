@@ -1,4 +1,4 @@
-import { Controller, Request, Post, UseGuards } from '@nestjs/common';
+import { Controller, Request, Post, Get, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthGuard } from '@nestjs/passport';
 
@@ -11,6 +11,12 @@ export class AuthController {
   @Post('login')
   async login(@Request() req) {
     return this.authService.login(req.user);
+  }
+
+  //end point will have slash counts at the end
+  @Get('counts')
+  async getCounts() {
+    return this.authService.getCounts();
   }
 
   //@Post('refresh')
