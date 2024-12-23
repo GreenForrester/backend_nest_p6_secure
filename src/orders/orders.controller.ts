@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Options,
 } from '@nestjs/common';
 import { OrdersService } from './orders.service';
 import { CreateOrderDto } from './dto/create-order.dto';
@@ -14,6 +15,11 @@ import { UpdateOrderDto } from './dto/update-order.dto';
 @Controller('orders')
 export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
+
+  @Options() // Handle OPTIONS requests for CORS preflight. nestjs mostly handles what to return
+  handleOptions() {
+    return {}; // Just return an empty object - NestJS will add the necessary headers
+  }
 
   @Post()
   create(@Body() createOrderDto: CreateOrderDto) {

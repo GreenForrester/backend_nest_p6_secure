@@ -1,5 +1,5 @@
-import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { NestFactory } from '@nestjs/core';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -7,8 +7,10 @@ async function bootstrap() {
   // Enable CORS and Options for react axios
   app.enableCors({
     origin: 'http://localhost:5173', // react frontend URL (adjust for production)
-    methods: ['POST', 'GET', 'OPTIONS', 'PUT', 'DELETE'], // Allowed methods
-    allowedHeaders: ['Content-Type'], // Allowed headers
+    methods: 'GET,HEAD,POST,PUT,DELETE,PATCH', // Allowed methods
+    credentials: true, // Allow credentials (cookies, authorization headers)
+    allowedHeaders:
+      'Origin, X-Requested-With, Content-Type, Accept, Authorization', // Allowed headers
   });
 
   await app.listen(process.env.PORT ?? 3000);

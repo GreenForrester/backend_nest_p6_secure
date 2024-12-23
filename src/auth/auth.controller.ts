@@ -1,10 +1,22 @@
-import { Controller, Request, Post, Get, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Request,
+  Post,
+  Get,
+  UseGuards,
+  Options,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
+
+  @Options() // Handle OPTIONS requests for CORS preflight. nestjs mostly handles what to return
+  handleOptions() {
+    return {}; // Just return an empty object - NestJS will add the necessary headers
+  }
 
   //local will allow to use local strategy
   @UseGuards(AuthGuard('local'))

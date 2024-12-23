@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   UseGuards,
+  Options,
 } from '@nestjs/common';
 import { CustomersService } from './customers.service';
 import { CreateCustomerDto } from './dto/create-customer.dto';
@@ -17,6 +18,11 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 @UseGuards(JwtAuthGuard) //use protection here
 export class CustomersController {
   constructor(private readonly customersService: CustomersService) {}
+
+  @Options() // Handle OPTIONS requests for CORS preflight. nestjs mostly handles what to return
+  handleOptions() {
+    return {}; // Just return an empty object - NestJS will add the necessary headers
+  }
 
   @Post()
   create(@Body() createCustomerDto: CreateCustomerDto) {
